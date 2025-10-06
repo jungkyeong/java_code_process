@@ -1,0 +1,19 @@
+// program run
+// compile: javac MainProject.java
+// run: java MainProject
+
+package com.example.hellotest; // package 
+
+public class MainProject {
+
+    // test print
+    public static String getMessage() {
+        return "Hello, Maven World!";
+    }
+
+    // main function
+    public static void main(String[] args) {
+
+        System.out.println(getMessage()); // test print
+    }
+}

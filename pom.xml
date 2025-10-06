@@ -1,0 +1,97 @@
+<!--
+  ******************************************************************************
+  * @file           : Maven
+  * @brief          : code process to JAVA build file 
+  ******************************************************************************
+  * Made in JKS
+  * https://github.com/jungkyeong
+  * CopyRigth MIT License
+  ******************************************************************************
+  * Release History
+  * branch name, working description, time
+  * main: init_create  2025-10-06
+  ******************************************************************************
+  * cmd
+  * compile: mvn compile
+  * test: mvn test
+  * run: mvn exec:java
+-->
+<!-- Maven Project root tag -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- group / build name / version info / build type -->
+    <groupId>com.example</groupId>
+    <artifactId>hellotest</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <!-- project name and description -->
+    <name>Hello Test Project</name>
+    <description>Simple Maven test project for HelloWorld example</description>
+
+    <!-- Java version -->
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- dependency (export get JUnit lib 5) -->
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- Java compile setting -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Surefire Plugin (JUnit run) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <useModulePath>false</useModulePath>
+                </configuration>
+            </plugin>
+
+            <!-- Exec Plugin (Main run) -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.example.hellotest.MainProject</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
