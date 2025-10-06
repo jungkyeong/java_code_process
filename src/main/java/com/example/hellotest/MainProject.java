@@ -15,5 +15,6 @@ public class MainProject {
     public static void main(String[] args) {
 
         System.out.println(getMessage()); // test print
+        System.out.println("Current Time: " + DateUtil.getCurrentDateTime()); // get current time
     }
 }
