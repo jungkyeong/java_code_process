@@ -4,6 +4,8 @@
 
 package com.example.hellotest; // package 
 
+import com.example.util.UtilClass; // add util class
+
 public class MainProject {
 
     // test print
@@ -16,5 +18,7 @@ public class MainProject {
 
         System.out.println(getMessage()); // test print
         System.out.println("Current Time: " + DateUtil.getCurrentDateTime()); // get current time
+
+        UtilClass.UtilPrint("=== This is from UtilClass ===");
     }
 }

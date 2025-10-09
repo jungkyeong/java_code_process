@@ -15,6 +15,7 @@
   * compile: mvn compile
   * test: mvn test
   * run: mvn exec:java
+  * clean: mvn clean
 -->
 <!-- Maven Project root tag -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
