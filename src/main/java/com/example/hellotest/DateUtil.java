@@ -7,10 +7,6 @@ public class DateUtil {
 
     // get Current time
     public static String getCurrentDateTime() {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        return new SimpleDateFormat("yyyy.MM.dd HH'시':mm'분':ss'초' ").format(new Date());
     }
-    public static String getCurrentDateTime(String pattern) {
-        return new SimpleDateFormat(pattern).format(new Date());
-    }
-
 }

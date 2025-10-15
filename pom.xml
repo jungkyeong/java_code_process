@@ -16,8 +16,9 @@
   * test: mvn test
   * run: mvn exec:java
   * clean: mvn clean
+  * package: mvn package
 -->
-<!-- Maven Project root tag -->
+<!-- Maven Project root default tag -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -25,11 +26,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- group / build name / version info / build type -->
-    <groupId>com.example</groupId>
-    <artifactId>hellotest</artifactId>
-    <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <!--mvn package jar file create will target folder-->
+    <groupId>com.example</groupId> <!--maven packaging group ID-->
+    <artifactId>code-process</artifactId> <!--file name-->
+    <version>1.0.0</version> <!--file version-->
+    <packaging>jar</packaging> <!--file type-->
 
     <!-- project name and description -->
     <name>Hello Test Project</name>
@@ -61,8 +62,7 @@
 
     <build>
         <plugins>
-
-            <!-- Java compile setting -->
+            <!-- Java compile setting (.java -> .class, setting mvn compile)-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -73,7 +73,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Maven Surefire Plugin (JUnit run) -->
+            <!-- Maven Surefire Plugin (JUnit run, setting "mvn test") -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -83,7 +83,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Exec Plugin (Main run) -->
+            <!-- Exec Plugin (Main run, setting "mvn exec:java") -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
